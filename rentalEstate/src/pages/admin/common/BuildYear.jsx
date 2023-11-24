@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-export default function City({ onSelectChange }) {
+export default function BuildYear({ onSelectChange }) {
   const [value, setValue] = useState(null);
 
   const options = [
-    { value: 'lalitpur', label: 'Lalitpur' },
-    { value: 'bhaktapur', label: 'Bhaktapur' },
-    { value: 'kathmandu', label: 'Kathmandu' },
-    { value: 'kaski', label: 'Kaski' },
-    { value: 'rupandehi', label: 'rupandehi' },
-
+    { value: '2072 ', label: '2070' },
+    { value: '2072', label: '2071' },
+    { value: '2072', label: '2072' },
+    { value: '2073 ', label: '2073' },
+    { value: '2074', label: '2074' },
+    { value: '2075', label: '2075' },
+    { value: '2076 ', label: '2076' },
+    { value: '2077', label: '2077' },
+    { value: '2078', label: '2078' },
   ];
 
   const customStyles = {
@@ -44,7 +47,7 @@ export default function City({ onSelectChange }) {
         <Select
           options={options}
           value={value}
-          placeholder="city"
+          placeholder="Build Year"
           onChange={handleSelectChange}
           styles={customStyles}
         />

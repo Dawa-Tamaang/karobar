@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-export default function City({ onSelectChange }) {
+export default function Furnishing({ onSelectChange }) {
   const [value, setValue] = useState(null);
 
   const options = [
-    { value: 'lalitpur', label: 'Lalitpur' },
-    { value: 'bhaktapur', label: 'Bhaktapur' },
-    { value: 'kathmandu', label: 'Kathmandu' },
-    { value: 'kaski', label: 'Kaski' },
-    { value: 'rupandehi', label: 'rupandehi' },
-
+    { value: 'fullyfurnished ', label: 'Fully Furnished' },
+    { value: 'semifurnished', label: 'Semi Furnished' },
+    { value: 'Unfurnished', label: 'Unfurnished' },
   ];
 
   const customStyles = {
@@ -44,7 +41,7 @@ export default function City({ onSelectChange }) {
         <Select
           options={options}
           value={value}
-          placeholder="city"
+          placeholder="Furnishing"
           onChange={handleSelectChange}
           styles={customStyles}
         />

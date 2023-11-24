@@ -1,10 +1,72 @@
 import React, { useState, useRef, useMemo } from 'react';
 import AdminMenu from './components/AdminMenu'
 import City from './common/City'
+import Area from './common/Area';
 import JoditEditor from 'jodit-react';
+import DistanceFMR from './common/DistanceFMR'
+import BuildYear from './common/BuildYear'
+import Furnishing from './common/Furnishing'
+import AreaMeasurement from './common/AreaMeasurement';
+import RoadType from './common/RoadType';
+import RoadMType from './common/RoadMType';
+import BuildAreaMea from './common/BuildAreaMea';
+import PropertyFace from './common/PropertyFace';
+// import PriceLabel from './common/PriceLabel';
 export default function CreateProperty() {
     const editor = useRef(null);
 	const [content, setContent] = useState('');
+    const [selectedCity, setSelectedCity] = useState(null);
+    const [selectedArea, setSelectedArea] = useState(null)
+    const [SelectedRoadmeasure, setSelectedRoadmeasure] = useState(null)
+    const [SelectedRoadtype, setSelectedRoadtype] = useState(null)
+    const [SelectedBuildYear, setSelectedBuildYear] = useState(null)
+    const [SelectedDistance, setSelectedDistance] = useState(null)
+    const [SelectedFloorFurnishing, setSelectedFloorFurnishing] = useState(null)
+    const [SelectedAreameasurement, setSelectedAreameasurement] = useState(null)
+    const [SelectedBuildAreaMeas, setSelectedBuildAreaMeas] = useState(null)
+    const [SelectedPropertyFace, setSelectedPropertyFace] = useState(null)
+    
+
+    const handleCitySelectChange = (selectedOption) => {
+        setSelectedCity(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleAreaSelectChange = (selectedOption) => {
+        setSelectedArea(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleRoadmeasureSelectChange = (selectedOption) => {
+        setSelectedRoadmeasure(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleRoadTypeSelectChange = (selectedOption) => {
+        setSelectedRoadtype(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleDistanceSelectChange = (selectedOption) => {
+        setSelectedDistance(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleBuildYearSelectChange = (selectedOption) => {
+        setSelectedBuildYear(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleFurnishingSelectChange = (selectedOption) => {
+        setSelectedFloorFurnishing(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleMeasurementSelectChange = (selectedOption) => {
+        setSelectedMeasurement(selectedOption);
+        console.log(selectedOption);
+    };
+    const handleBuildAreaMeasSelectChange = (selectedOption) => {
+        setSelectedBuildAreaMeas(selectedOption);
+        console.log(selectedOption);
+    };
+    const handlePropertyFaceSelectChange = (selectedOption) => {
+        setSelectedPropertyFace(selectedOption);
+        console.log(selectedOption);
+    };
   return (
     <div className='max-w-screen-xl mx-auto'>
         <div className='pr-5 py-5 flex flex-1 overflow-auto mb-10'>
@@ -130,7 +192,7 @@ export default function CreateProperty() {
                                             City
                                         </div>
                                         <div className='mb-2'>
-                                            <City/>
+                                            <City onSelectChange={handleCitySelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +202,42 @@ export default function CreateProperty() {
                                             Area
                                         </div>
                                         <div>
-                                            <City/>
+                                            <Area onSelectChange={handleAreaSelectChange}/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='w-full pb-3'>
+                            <div className="grid grid-cols-3 gap-4">
+                                <div className=" h-[50px] rounded-sm flex items-center">
+                                    <div className='items-start w-full'>
+                                        <div className='font-semibold text-lg mb-2'>
+                                            Road size
+                                        </div>
+                                        <div className='mb-2'>
+                                            <input type="text" id="roadsize" 
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div className="h-[50px] rounded-sm flex items-center">
+                                    <div className='items-start justify-between w-full gap-2 '>
+                                        <div className='font-semibold text-lg mb-2 '>
+                                            Measurement Type
+                                        </div>
+                                        <div className='mb-2'>
+                                            <RoadMType onSelectChange={handleRoadmeasureSelectChange}/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="h-[50px] rounded-sm flex items-center">
+                                    <div className='items-start justify-between w-full'>
+                                        <div className='font-semibold text-lg mb-2'>
+                                            Road Type
+                                        </div>
+                                        <div>
+                                            <RoadType onSelectChange={handleRoadTypeSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +262,7 @@ export default function CreateProperty() {
                                             Measurement Type
                                         </div>
                                         <div>
-                                            <City/>
+                                            <DistanceFMR onSelectChange={handleDistanceSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +276,7 @@ export default function CreateProperty() {
                                             Built Year
                                         </div>
                                         <div>
-                                            <City/>
+                                            <BuildYear onSelectChange={handleBuildYearSelectChange}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -197,10 +294,10 @@ export default function CreateProperty() {
                                 <div className="h-[50px] rounded-sm flex items-center">
                                     <div className='items-start justify-between w-full'>
                                         <div className='font-semibold text-lg mb-2'>
-                                            Measurement Type
+                                            Furnishing
                                         </div>
                                         <div>
-                                            <City/>
+                                            <Furnishing onSelectChange={handleFurnishingSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -225,7 +322,7 @@ export default function CreateProperty() {
                                             Area Measurement
                                         </div>
                                         <div>
-                                            <City/>
+                                            <AreaMeasurement onSelectChange={handleMeasurementSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -250,7 +347,7 @@ export default function CreateProperty() {
                                             Area Measurement
                                         </div>
                                         <div>
-                                            <City/>
+                                            <BuildAreaMea onSelectChange={handleBuildAreaMeasSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -264,7 +361,7 @@ export default function CreateProperty() {
                                             Property Face
                                         </div>
                                         <div>
-                                            <City/>
+                                            <PropertyFace onSelectChange={handlePropertyFaceSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -389,16 +486,16 @@ export default function CreateProperty() {
                                         </div>
                                     </div> 
                                 </div>
-                                <div className="h-[50px] rounded-sm flex items-center">
+                                {/* <div className="h-[50px] rounded-sm flex items-center">
                                     <div className='items-start justify-between w-full'>
                                         <div className='font-semibold text-lg mb-2'>
-                                            Area Measurement
+                                            Price Label
                                         </div>
                                         <div>
-                                            <City/>
+                                            <PriceLabel />
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className='w-full py-5'>

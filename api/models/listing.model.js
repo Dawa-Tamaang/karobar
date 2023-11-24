@@ -2,35 +2,35 @@ import mongoose from 'mongoose';
 
 const listingSchema = new mongoose.Schema(
   {
-    name: {
+    want: {
       type: String,
       required: true,
     },
-    description: {
+    propertytype: {
       type: String,
       required: true,
+    },
+    propertyCategory: {
+      type: String,
+      required: true,
+    },
+    propertytile: {
+        type: String,
+        required: true,
     },
     address: {
       type: String,
       required: true,
     },
-    overview: {
-        type: String,
-        required: true,
-    },
-    regularPrice: {
-      type: Number,
+    city: {
+      type: String,
       required: true,
     },
-    discountPrice: {
-      type: Number,
+    area: {
+      type: String,
       required: true,
     },
-    bathrooms: {
-      type: Number,
-      required: true,
-    },
-    bedrooms: {
+    roadsize: {
       type: Number,
       required: true,
     },

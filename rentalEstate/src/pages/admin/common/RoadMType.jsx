@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-export default function City({ onSelectChange }) {
+export default function RoadMType({ onSelectChange }) {
   const [value, setValue] = useState(null);
 
   const options = [
-    { value: 'lalitpur', label: 'Lalitpur' },
-    { value: 'bhaktapur', label: 'Bhaktapur' },
-    { value: 'kathmandu', label: 'Kathmandu' },
-    { value: 'kaski', label: 'Kaski' },
-    { value: 'rupandehi', label: 'rupandehi' },
-
+    { value: 'feet', label: 'Feet' },
+    { value: 'meter', label: 'meter' },
   ];
 
   const customStyles = {
@@ -44,7 +40,7 @@ export default function City({ onSelectChange }) {
         <Select
           options={options}
           value={value}
-          placeholder="city"
+          placeholder="Measurement Type"
           onChange={handleSelectChange}
           styles={customStyles}
         />
