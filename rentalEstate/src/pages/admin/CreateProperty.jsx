@@ -15,6 +15,13 @@ import PropertyFace from './common/PropertyFace';
 export default function CreateProperty() {
     const editor = useRef(null);
 	const [content, setContent] = useState('');
+    const [value, setValue] = useState('');
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+  const [formData, setFormData] = useState({
+    // Initial values for your form data
+  });
     const [selectedCity, setSelectedCity] = useState(null);
     const [selectedArea, setSelectedArea] = useState(null)
     const [SelectedRoadmeasure, setSelectedRoadmeasure] = useState(null)
@@ -79,7 +86,7 @@ export default function CreateProperty() {
                         Add Your Property
                     </div>
                 </div>
-                <form>
+                <form >
                     <div className='flex flex-wrap gap-5'>
                         <div className='w-full pb-3'>
                             <div className='font-semibold text-lg mb-2'>
@@ -87,15 +94,15 @@ export default function CreateProperty() {
                             </div>
                             <div className='flex gap-6 flex-wrap'>  
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='sale' name='propertyWhat' className='w-4 h-4' />
+                                    <input type='radio' id='sale' name='propertyWhat' className='w-4 h-4' onChange={handleChange} value={formData.sale}/>
                                     <label for="sale" class='ml-2'>Sale</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='rent' name='propertyWhat' className='w-4 h-4' />
+                                    <input type='radio' id='rent' name='propertyWhat' className='w-4 h-4' onChange={handleChange} value={formData.rent}/>
                                     <label for="rent" class='ml-2'>Rent</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='lease' name='propertyWhat' className='w-4 h-4' />
+                                    <input type='radio' id='lease' name='propertyWhat' className='w-4 h-4' onChange={handleChange} value={formData.lease}/>
                                     <label for="lease" class='ml-2'>Lease</label>
                                 </div>
                             </div>
@@ -106,15 +113,15 @@ export default function CreateProperty() {
                             </div>
                             <div className='flex gap-6 flex-wrap'>  
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='residential' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='residential' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.residential}/>
                                     <label for="residential" class='ml-2'>Residential</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='commercial' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='commercial' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.commercial}/>
                                     <label for="commercial" class='ml-2'>Commercial</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='agricultural' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='agricultural' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.agricultural}/>
                                     <label for="agricultural" class='ml-2'>Agricultural</label>
                                 </div>
                             </div>
@@ -125,39 +132,39 @@ export default function CreateProperty() {
                             </div>
                             <div className='flex gap-6 flex-wrap'>  
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='house' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='house' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.house}/>
                                     <label for="house" class='ml-2'>House</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='land' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='land' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.land}/>
                                     <label for="land" class='ml-2'>Land</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='flat' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='flat' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.flat}/>
                                     <label for="flat" class='ml-2'>Flat</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='apartment' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='apartment' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.apartment}/>
                                     <label for="apartment" class='ml-2'>Apartment</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='housing' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='housing' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.housing}/>
                                     <label for="housing" class='ml-2'>Housing</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='business' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='business' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.business}/>
                                     <label for="business" class='ml-2'>Business</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='officespace' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='officespace' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.officespace}/>
                                     <label for="officespace" class='ml-2'>Office Space</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='hostel' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='hostel' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.hostel}/>
                                     <label for="hostel" class='ml-2'>Hostel</label>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <input type='radio' id='room' name='propertyType' className='w-4 h-4' />
+                                    <input type='radio' id='room' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.room}/>
                                     <label for="room" class='ml-2'>Room</label>
                                 </div>
                             </div>
@@ -169,7 +176,7 @@ export default function CreateProperty() {
                             <div className='flex flex-wrap'>  
                                 <div className='w-full'>
                                 <input type="text" id="propertytitle" 
-                                className='w-full text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                className='w-full text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.propertytitle}/>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +189,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div className='mb-2'>
                                             <input type="text" id="address" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.address}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -217,7 +224,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div className='mb-2'>
                                             <input type="text" id="roadsize" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.roadsize}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -252,7 +259,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="dis_from_mr" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.dis_from_mr}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -287,7 +294,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="total_floors" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.total_floors}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -312,7 +319,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="tot_prop_area" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.tot_prop_area}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -337,7 +344,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="bui_up_area" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.bui_up_are}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -376,7 +383,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="bedrooms" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.bedrooms}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -387,7 +394,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="bathrooms" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.bathrooms}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -398,7 +405,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="livinghall" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.livinghall}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -413,7 +420,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="kitchen" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.kitchen}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -424,7 +431,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="parking" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.parking}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -438,35 +445,35 @@ export default function CreateProperty() {
                                     </div>
                                     <div className='grid grid-cols-4 gap-4'> 
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='electricitybackup' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='electricitybackup' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.electricitybackup}/>
                                             <label for="electricitybackup" class='ml-2'>Electricity Backup</label>
                                         </div>
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='maintenance' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='maintenance' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.maintenance}/>
                                             <label for="maintenance" class='ml-2'>Maintenance</label>
                                         </div>
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='playground' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='playground' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.playground}/>
                                             <label for="playground" class='ml-2'>Playground</label>
                                         </div>
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='storeroom' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='storeroom' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.storeroom}/>
                                             <label for="storeroom" class='ml-2'>Store Room</label>
                                         </div>
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='gym' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='gym' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.gym}/>
                                             <label for="gym" class='ml-2'>Gym</label>
                                         </div>
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='modularkitchen' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='modularkitchen' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.modularkitchen}/>
                                             <label for="modularkitchen" class='ml-2'>Modular Kitchen</label>
                                         </div>
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='airconditioner' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='airconditioner' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.airconditioner}/>
                                             <label for="airconditioner" class='ml-2'>Air Conditioner</label>
                                         </div>
                                         <div className='flex items-center gap-2'>
-                                            <input type='checkbox' id='garage' name='propertyType' className='w-4 h-4' />
+                                            <input type='checkbox' id='garage' name='propertyType' className='w-4 h-4' onChange={handleChange} value={formData.garage}/>
                                             <label for="garage" class='ml-2'>Garage</label>
                                         </div>
                                     </div>
@@ -482,7 +489,7 @@ export default function CreateProperty() {
                                         </div>
                                         <div>
                                             <input type="text" id="price" 
-                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' />
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.price}/>
                                         </div>
                                     </div> 
                                 </div>
@@ -512,6 +519,43 @@ export default function CreateProperty() {
                                         />
                                     </div>
                                 </div> 
+                            </div>
+                        </div>
+                        <div className='w-full pb-3'>
+                            <div className="grid grid-cols-3 gap-4">
+                                <div className=" h-[50px] rounded-sm flex items-center">
+                                    <div className='items-start justify-between w-full gap-2'>
+                                        <div className='font-semibold text-lg mb-2'>
+                                            Owner Name
+                                        </div>
+                                        <div>
+                                            <input type="text" id="ownername" 
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.ownername}/>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div className=" h-[50px] rounded-sm flex items-center">
+                                    <div className='items-start justify-between w-full gap-2'>
+                                        <div className='font-semibold text-lg mb-2'>
+                                            Owner Email
+                                        </div>
+                                        <div>
+                                            <input type="text" id="owneremail" 
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.owneremail}/>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div className=" h-[50px] rounded-sm flex items-center">
+                                    <div className='items-start justify-between w-full gap-2'>
+                                        <div className='font-semibold text-lg mb-2'>
+                                            Owner Contact
+                                        </div>
+                                        <div>
+                                            <input type="text" id="ownercontact" 
+                                            className='w-full h-10 text-black py-2 my-2 bg-transparent border-2 border-gray-200 outline-none focus:outline-none pl-2' onChange={handleChange} value={formData.ownercontact}/>
+                                        </div>
+                                    </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
