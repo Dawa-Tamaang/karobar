@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 
-export default function AreaMeasurement() {
+export default function AreaMeasurement({ onSelectChange }) {
     const [value, setValue] = useState(null);
 
     const options = [

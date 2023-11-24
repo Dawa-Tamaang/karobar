@@ -20,11 +20,11 @@ export default function CreateProperty() {
     const [SelectedRoadmeasure, setSelectedRoadmeasure] = useState(null)
     const [SelectedRoadtype, setSelectedRoadtype] = useState(null)
     const [SelectedBuildYear, setSelectedBuildYear] = useState(null)
-    const [SelectedDistance, setSelectedDistance] = useState(null)
     const [SelectedFloorFurnishing, setSelectedFloorFurnishing] = useState(null)
+    const [SelectedPropertymeasure, setSelectedPropertymeasure] = useState(null)
     const [SelectedAreameasurement, setSelectedAreameasurement] = useState(null)
     const [SelectedBuildAreaMeas, setSelectedBuildAreaMeas] = useState(null)
-    const [SelectedPropertyFace, setSelectedPropertyFace] = useState(null)
+    const [SelectedPropertyface, setSelectedPropertyface] = useState(null)
     
 
     const handleCitySelectChange = (selectedOption) => {
@@ -39,12 +39,12 @@ export default function CreateProperty() {
         setSelectedRoadmeasure(selectedOption);
         console.log(selectedOption);
     };
-    const handleRoadTypeSelectChange = (selectedOption) => {
+    const handleRoadtypeSelectChange = (selectedOption) => {
         setSelectedRoadtype(selectedOption);
         console.log(selectedOption);
     };
-    const handleDistanceSelectChange = (selectedOption) => {
-        setSelectedDistance(selectedOption);
+    const handleMeasurementSelectChange = (selectedOption) => {
+        setSelectedAreameasurement(selectedOption);
         console.log(selectedOption);
     };
     const handleBuildYearSelectChange = (selectedOption) => {
@@ -55,16 +55,16 @@ export default function CreateProperty() {
         setSelectedFloorFurnishing(selectedOption);
         console.log(selectedOption);
     };
-    const handleMeasurementSelectChange = (selectedOption) => {
-        setSelectedMeasurement(selectedOption);
+    const handlePropertymeasureSelectChange = (selectedOption) => {
+        setSelectedPropertymeasure(selectedOption);
         console.log(selectedOption);
     };
     const handleBuildAreaMeasSelectChange = (selectedOption) => {
         setSelectedBuildAreaMeas(selectedOption);
         console.log(selectedOption);
     };
-    const handlePropertyFaceSelectChange = (selectedOption) => {
-        setSelectedPropertyFace(selectedOption);
+    const handlePropertyfaceSelectChange = (selectedOption) => {
+        setSelectedPropertyface(selectedOption);
         console.log(selectedOption);
     };
   return (
@@ -237,7 +237,7 @@ export default function CreateProperty() {
                                             Road Type
                                         </div>
                                         <div>
-                                            <RoadType onSelectChange={handleRoadTypeSelectChange}/>
+                                        <RoadType onSelectChange={handleRoadtypeSelectChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@ export default function CreateProperty() {
                                             Measurement Type
                                         </div>
                                         <div>
-                                            <DistanceFMR onSelectChange={handleDistanceSelectChange}/>
+                                            <DistanceFMR onSelectChange={handleMeasurementSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -322,7 +322,7 @@ export default function CreateProperty() {
                                             Area Measurement
                                         </div>
                                         <div>
-                                            <AreaMeasurement onSelectChange={handleMeasurementSelectChange}/>
+                                            <AreaMeasurement onSelectChange={handlePropertymeasureSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -361,7 +361,7 @@ export default function CreateProperty() {
                                             Property Face
                                         </div>
                                         <div>
-                                            <PropertyFace onSelectChange={handlePropertyFaceSelectChange}/>
+                                            <PropertyFace onSelectChange={handlePropertyfaceSelectChange}/>
                                         </div>
                                     </div>
                                 </div>
