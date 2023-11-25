@@ -13,30 +13,34 @@ import house2 from '../assets/images/products/house2.jpg'
 import ListingItems from '../components/ListingItems'
 import Select from 'react-select'
 import { Link } from 'react-router-dom'
-
+import City from '../components/common/City'
+import Type from '../components/common/Type'
+import Category from '../components/common/Category'
 export default function Home() {
-    const [value, setValue] = useState(null);
-    const options = [
-        {value: "CHOCOLATE", label: "Chocolate"},
-        {value: "CHOCOLATE", label: "Chocolate"},
-        {value: "CHOCOLATE", label: "Chocolate"},
-        {value: "CHOCOLATE", label: "Chocolate"}
-    ]
-    const customStyles = {
-        control: (provided, state) => ({
-          ...provided,
-          border: state.isFocused ? '2px solid #ccc' : '2px solid #ccc',
-          boxShadow: state.isFocused ? 'none' : 'none',
-          '&:hover': {
-            border: '2px solid #ccc',
-          },
-        }),
-        option: (provided, state) => ({
-          ...provided,
-          background: state.isFocused ? '#none' : 'white',
-          color: state.isFocused ? 'black' : 'black',
-        }),
-      };
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const handleCategorySelectChange = (selectedOption) => {
+        setSelectedCategory(selectedOption);
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            category: selectedOption.value, // or whatever property you need
+        }));
+    };
+    const [selectedCity, setSelectedCity] = useState(null);
+    const handleCitySelectChange = (selectedOption) => {
+        setSelectedCity(selectedOption);
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            city: selectedOption.value, // or whatever property you need
+        }));
+    };
+    const [SelectedType, setSelectedType] = useState(null);
+    const handleTypeSelectChange = (selectedOption) => {
+        setSelectedType(selectedOption);
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            type: selectedOption.value, // or whatever property you need
+        }));
+    };
   return (
     <home >
         <div className="h-[500px] relative">
@@ -61,17 +65,17 @@ export default function Home() {
                     <div className='w-full h-full flex gap-3'>
                         <div className=" h-10 flex items-center justify-center w-1/4 ">
                             <div className='w-full'>
-                                <Select options={options} defaultValue={value} placeholder="Category" onChange={setValue} styles={customStyles}/>
+                                <Category onSelectChange={handleCategorySelectChange}/>
                             </div>   
                         </div>
                         <div className=" h-10 flex items-center justify-center w-1/4 ">
                             <div className='w-full'>
-                                <Select options={options} defaultValue={value} placeholder="Category" onChange={setValue} styles={customStyles} />
+                            <City onSelectChange={handleCitySelectChange}/>
                             </div>   
                         </div>
                         <div className=" h-10 flex items-center justify-center w-1/4 ">
                             <div className='w-full'>
-                                <Select options={options} defaultValue={value} placeholder="Category" onChange={setValue} styles={customStyles}/>
+                                <Type onSelectChange={handleTypeSelectChange}/>
                             </div>   
                         </div>
                         <div className='h-10 flex items-center justify-center w-1/4'>

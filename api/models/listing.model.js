@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const listingSchema = new mongoose.Schema(
   {
-    want: {
+    type: {
       type: String,
       required: true,
     },
@@ -10,11 +10,11 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    propertyCategory: {
+    propertycategory: {
       type: String,
       required: true,
     },
-    propertytile: {
+    propertytitle: {
         type: String,
         required: true,
     },
@@ -34,29 +34,97 @@ const listingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    floor: {
-        type: Number,
+    roadmeasuretype: {
+        type: String,
         required: true,
       },
-    parking: {
-    type: Number,
+    roadtype: {
+    type: String,
     required: true,
     },
-    furnished: {
-      type: Boolean,
+    dis_from_mr: {
+      type: Number,
       required: true,
     },
-    type: {
+    disfrommainroadtype: {
       type: String,
       required: true,
     },
-    offer: {
-      type: Boolean,
+    buildyear: {
+      type: String,
       required: true,
     },
-    imageUrls: {
-      type: Array,
+    totalfloor: {
+      type: String,
       required: true,
+    },
+    furnishing: {
+      type: String,
+      required: true,
+    },
+    totalpropertyarea: {
+      type: String,
+      required: true,
+    },
+    propertyareameasurement: {
+      type: String,
+      required: true,
+    },
+    builduparea: {
+      type: String,
+      required: true,
+    },
+    buildupareameasurement: {
+      type: String,
+      required: true,
+    },
+    propertyface: {
+      type: String,
+      required: true,
+    },
+    bedrooms: {
+      type: String,
+      required: true,
+    },
+    bathrooms: {
+      type: String,
+      required: true,
+    },
+    livinghall: {
+      type: String,
+      required: true,
+    },
+    kitchen: {
+      type: String,
+      required: true,
+    },
+    parking: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    ownername: {
+      type: String,
+      required: true,
+    },
+    owneremail: {
+      type: String,
+      required: true,
+    },
+    ownercontact: {
+      type: Number,
+      required: true,
+    },
+    imageUrl: {
+      type: Array,
+      required:true
     },
     userRef: {
       type: String,

@@ -15,6 +15,7 @@ import CreateProperty from "./pages/admin/CreateProperty"
 import DashBoard from "./pages/admin/DashBoard"
 import Properties from "./pages/admin/Properties"
 import ForNrn from "./pages/ForNrn"
+import PropertyDisplay from "./pages/PropertyDisplay"
 
 export default function App() {
   return (
@@ -30,6 +31,8 @@ export default function App() {
             <Route path="/sign-in" element={<LoginPage/>}/>
             <Route path="/sign-up" element={<SignupPage/>}/>
             <Route path="/for-nrn" element={<ForNrn/>}/>
+            <Route path="/property-display/:listingId" element={<PropertyDisplay/>}/>
+
             <Route element={<PrivateRoute/>}>
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/create-property" element={<CreateProperty/>}/>

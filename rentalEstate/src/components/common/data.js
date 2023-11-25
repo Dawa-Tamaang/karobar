@@ -1,22 +1,22 @@
 export const dataList = [
   {
-    question: "How can we help you",
+    question: "Property Post Type",
     answer:
-      "Sed nec mollis quam. Cras rhoncus efficitur justo. Fusce ac rutrum est, in convallis turpis. Phasellus a enim et felis semper sodar. Sed rutrum lacinia leo.",
+      ["Sale", "Rent", "Lease"]
   },
   {
-    question: "Your personal credentials ",
+    question: "Property Type",
     answer:
-      "Sed nec mollis quam. Cras rhoncus efficitur justo. Fusce ac rutrum est, in convallis turpis. Phasellus a enim et felis semper sodales eu a est. rutrum lacinia leo.",
+    ["Residential", "Commercial", "Agricultural"]
   },
   {
-    question: "How to Login",
+    question: "Property Category",
     answer:
-      "Sed nec mollis quam. Cras rhoncus efficitur justo. Fusce ac rutrum est, in convallis turpis. Phasellus a enim et felis semper sodus gravida pulvinar. Sed rutrum lacinia leo.",
+    ["House", "Land", "Flat","Appartment", "Housing", "Business","Office Space", "Hostel", "Room"]
   },
   {
-    question: "Losing your password",
+    question: "Property Face",
     answer:
-      "Sed nec mollis quam. Cras rhoncus efficitur justo. Fusce ac rutrum est, in convallis turpis. Phasellus a enim et felis semper sodales eu a es. Sed rutrum lacinia leo.",
+    ["East", "West", "North","", "South", "South-East","South-West", "North-East", "North-West"]
   },
 ];

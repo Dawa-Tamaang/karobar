@@ -1,6 +1,7 @@
-import React from 'react'
-import { dataList } from '../common/data'
-import { Accordion } from '../common/Accordion'
+import React from 'react';
+import { dataList } from '../common/data'; // Adjust the path accordingly
+import { Accordion } from '../common/Accordion';
+
 export default function FilterPannel() {
   return (
     <div>
@@ -12,5 +13,5 @@ export default function FilterPannel() {
         ))}
       </div>
     </div>
-  )
+  );
 }

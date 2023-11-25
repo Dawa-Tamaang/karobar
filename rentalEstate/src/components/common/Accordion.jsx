@@ -19,7 +19,7 @@ export const Accordion = ({ section, key }) => {
 
 export const ExpendableColumn = ({ question, isOpen, toggle }) => {
   return (
-    <div className="w-full py-3 pr-3">
+    <div className="w-full py-1 pr-3">
         <div className="flex items-center" onClick={toggle}>
             <div className="w-full">
                 {question}
@@ -42,8 +42,10 @@ export const ExpendableColumn = ({ question, isOpen, toggle }) => {
 
 export const TextSection = ({ text }) => {
   return (
-    <div className="w-full p-3">
-      <div>{text}</div>
+    <div className=" flex flex-wrap gap-4 px-3">
+      {text.map((item, index) => (
+        <div className="font-medium text-sm" key={index}>{item}</div>
+      ))}
     </div>
   );
 };
