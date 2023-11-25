@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import house6 from '../assets/images/products/house6.jpg'
 import house1 from '../assets/images/products/house1.jpg'
 import house2 from '../assets/images/products/house2.jpg'
@@ -13,7 +13,6 @@ export default function PropertyDisplay() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const params = useParams();
-    const history = useHistory();
 
     useEffect(() => {
         const fetchListing = async () => {
@@ -35,7 +34,7 @@ export default function PropertyDisplay() {
         }
         };
         fetchListing();
-    }, [params.listingId, history]);
+    }, [params.listingId]);
   return (
     <div className='max-w-screen-xl mx-auto'>
         <div className='max-w-screen-xl mx-auto py-10'>
